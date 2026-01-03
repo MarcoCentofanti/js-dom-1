@@ -19,7 +19,9 @@ buttonEl.addEventListener("click", function(){
     lampBroken.classList.remove("invisible")
     bodyEl.classList.add("bg-dark")
     buttonEl.classList.add("btn-danger")
+    buttonEl.classList.add("disabled")
     buttonEl.textContent = "Rotta"
+    buttonEl.setAttribute("disabled", "true")
     
   } else if (buttonEl.classList.contains("off")) {
     buttonEl.textContent = "Spegni"
