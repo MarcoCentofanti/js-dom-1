@@ -2,11 +2,26 @@
 
 
 const buttonEl = document.getElementById("button-lamp")
+const buttonResetEl = document.getElementById("button-reset")
 const lampOnImg = document.getElementById("lamp-on")
 const lampBroken = document.getElementById("lamp-broken")
 const bodyEl = document.getElementById("body")
 const buttonText = buttonEl.textContent
 let lampLife = 10
+
+
+buttonResetEl.addEventListener("click", function(){
+    lampLife = 10
+    buttonResetEl.classList.toggle("invisible")
+    buttonEl.removeAttribute("disabled")
+    lampBroken.classList.add("invisible")
+    buttonEl.textContent = "Accendi"
+    buttonEl.classList.toggle("off")
+      buttonEl.classList.remove("btn-danger")
+      buttonEl.classList.remove("btn-warning")
+      buttonEl.classList.add("btn-secondary")
+    buttonEl.classList.toggle("btn-secondary")
+})
 
 buttonEl.addEventListener("click", function(){
   lampLife--
@@ -22,6 +37,7 @@ buttonEl.addEventListener("click", function(){
     buttonEl.classList.add("disabled")
     buttonEl.textContent = "Rotta"
     buttonEl.setAttribute("disabled", "true")
+    buttonResetEl.classList.toggle("invisible")
     
   } else if (buttonEl.classList.contains("off")) {
     buttonEl.textContent = "Spegni"
