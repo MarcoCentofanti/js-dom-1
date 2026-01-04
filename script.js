@@ -61,3 +61,21 @@ buttonEl.addEventListener("click", function(){
 // non sono riuscito ad implementare la modifica del testo del bottone usando includes sul textContent.
 // ho dovuto agirare il problema usando delle classi.
 // sembra che il dom continui a vedere il document originale
+
+
+const buttonTest = document.getElementById("test")
+
+buttonTest.addEventListener("click", function(){
+  if(buttonTest.textContent.includes("ok")){
+    buttonTest.textContent = "no" 
+} else {
+  buttonTest.textContent = "ok"
+}})
+
+
+
+
+// console.log(buttonTest.textContent)
+// console.log(buttonTest.textContent.includes("ok"))
+// buttonTest.textContent = "no"
+// console.log(buttonTest.textContent.includes("ok"))
